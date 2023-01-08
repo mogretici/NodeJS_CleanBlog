@@ -27,17 +27,17 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <% posts.forEach(function(post){ %>
         <div class="post-preview">
-          <a href="/post">
+          <a href="/post/<%= post._id %>">
             <h2 class="post-title">
               <%= post.title %>
             </h2>
             <h3 class="post-subtitle">
-            <%= post.message %>
+            <%= post.subtitle %>
             </h3>
           </a>
           <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
+            <a href="#">CleanBlog</a>
+            <%= post.dateCreated.toDateString()%></p>
         </div>
         <hr>
         <% }); %>
