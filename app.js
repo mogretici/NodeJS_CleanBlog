@@ -26,12 +26,14 @@ app.listen(port, () => {
 });
 
 //routes_page
-app.get("/", pageControllers.getHomePage);
+
 app.get("/about", pageControllers.getAboutPage);
 app.get("/add_post", pageControllers.getAddPostPage);
 app.get("/edit_post/:id", pageControllers.editPostPage);
 
 //routes_api
+
+app.get("/", postController.getAllPosts);
 app.get("/post/:id", postController.getPost);
 app.post("/sendpost", postController.sendPost);
 app.put("/updatepost/:id", postController.updatePost);
